@@ -61,4 +61,3 @@ export const authProvider = {
     return Promise.resolve("Admin");
   },
 };
-
