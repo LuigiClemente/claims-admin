@@ -119,8 +119,7 @@ export const dataProvider = {
       flightDisruption: params.data.flightDisruption,
       delayLength: params.data.delayLength,
       delayReason: params.data.delayReason,
-      firstName: params.data.firstName,
-      lastName: params.data.lastName,
+      fullName: params.data.fullName,
       email: params.data.email,
       phoneNumber: params.data.phoneNumber,
       referenceNumber: params.data.referenceNumber,
@@ -167,7 +166,7 @@ export const dataProvider = {
     };
     let query = "";
     let body = {};
-
+console.log(params.data.fullName)
     query = "/create";
     body = {
       link: params.data.link,
@@ -181,8 +180,7 @@ export const dataProvider = {
       flightDisruption: params.data.flightDisruption,
       delayLength: params.data.delayLength,
       delayReason: params.data.delayReason,
-      firstName: params.data.firstName,
-      lastName: params.data.lastName,
+      fullName: params.data.fullName,
       email: params.data.email,
       phoneNumber: params.data.phoneNumber,
       referenceNumber: params.data.referenceNumber,

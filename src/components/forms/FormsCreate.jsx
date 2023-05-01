@@ -9,6 +9,8 @@ import {
   DateInput,
   SelectInput,
   RadioButtonGroupInput,
+  ArrayInput,
+  SimpleFormIterator
 } from "react-admin";
 
 const FormsCreate = () => {
@@ -31,7 +33,7 @@ const FormsCreate = () => {
     <Create>
       <TabbedForm>
         <FormTab label="form create" sx={{ maxWidth: "40em" }}>
-        <TextInput
+          <TextInput
             sx={{ minWidth: "67vh" }}
             sortable={false}
             defaultValue={randGen(40)}
@@ -101,19 +103,23 @@ const FormsCreate = () => {
             source="delayReason"
           />
           {typeData.type === "Individual" && (
-            <TextInput
-              sx={{ minWidth: "67vh" }}
-              sortable={false}
-              source="firstName"
-            />
-          )}
-          {typeData.type === "Individual" && (
-            <TextInput
-              sx={{ minWidth: "67vh" }}
-              sortable={false}
-              source="lastName"
-            />
-          )}
+          <ArrayInput source="fullName" defaultValue={[{ firstName: '', lastName: '' }]}>
+            <SimpleFormIterator inline>
+                <TextInput
+                  sx={{ minWidth: "67vh" }}
+                  sortable={false}
+                  source="firstName"
+                  helperText={false}
+                />
+                <TextInput
+                  sx={{ minWidth: "67vh" }}
+                  sortable={false}
+                  source="lastName"
+                  helperText={false}
+                />
+            </SimpleFormIterator>
+          </ArrayInput>
+     )}
           {typeData.type === "Individual" && (
             <TextInput
               sx={{ minWidth: "67vh" }}
